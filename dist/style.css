@@ -1,0 +1,13 @@
+.moviename{
+	width:450px;
+	border:solid 1px black;
+}
+#watchlist{
+	border:solid 1px black;
+}
+.divtitle{
+	cursor:pointer;
+}
+.watchlist{
+	cursor:pointer;
+}
