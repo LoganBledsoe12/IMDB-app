@@ -28,6 +28,7 @@ $(document).ready(function(){
 					var movieli = _.template($movietemplate);
 					$divtitle.append(movieli(theMovie.Search[i]));
 
+
 				}
 				//:makes the movie an array according to the variable below
 								//:variable that holds the list from html
@@ -54,6 +55,12 @@ $(document).ready(function(){
 		function(e){
 			var movieid = $(e.target).attr ('movieId');
 			var movietitle = $(e.target).attr ('movietitle');
+			var exist = _.where($listofmovies, {id:movieid});
+			if (exist.length>0) {
+				alert('You cannot add the movie more than once!')
+				return
+			}
+
 			$listofmovies.push ({id:movieid,title:movietitle});
 			var $watchlist = $('#watchlist')
 			$watchlist.empty()
